@@ -6,21 +6,20 @@
 /*   By: xriera-c <xriera-c@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 14:18:39 by xriera-c          #+#    #+#             */
-/*   Updated: 2023/12/04 15:18:26 by xriera-c         ###   ########.fr       */
+/*   Updated: 2023/12/04 17:03:18 by xriera-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	*top_swap(int arr[])
+void	top_swap(int arr[])
 {
 	int	tmp;
 
 	tmp = arr[0];
 	arr[0] = arr[1];
 	arr[1] = tmp;
-	return (arr);
 }
 
-int	*rotate(int arr[], int len)
+void	rotate(int arr[], int len)
 {
 	int	tmp;
 	int	i;
@@ -33,10 +32,9 @@ int	*rotate(int arr[], int len)
 		i++;
 	}
 	arr[i] = tmp;
-	return (arr);
 }
 
-int	*reverse_rotate(int arr[], int len)
+void	reverse_rotate(int arr[], int len)
 {
 	int	tmp;
 
@@ -47,20 +45,18 @@ int	*reverse_rotate(int arr[], int len)
 		len--;
 	}
 	arr[0] = tmp;
-	return (arr);
 }
 
-int	*top_push(int taker[], int giver[])
+void	top_push(int taker[], int giver[], int	len)
 {
-	int	tmp;
+	int	i;
 
-	if (giver[0] == '\0')
-		return (NULL);
-	while ()
+	if (giver[0] != '\0')
 	{
-		tmp = taker[i];
-		if (i == 0)
-			taker[i] = giver[0];
-	}
+		i = 0;
+		while (len_taker - 1 > 1)
+		{
+			taker[len_taker - 1] = taker[len-taker
+		}
 
 }

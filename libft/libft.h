@@ -14,6 +14,8 @@
 # define LIBFT_H
 
 # include <stdlib.h>
+# include <stdarg.h>
+# include <unistd.h>
 
 /*Character functions*/
 
@@ -43,6 +45,7 @@ void	ft_putchar_fd(char c, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 void	ft_putstr_fd(char *s, int fd);
+void	ft_putnbr_base(int nbr, char *base);
 char	**ft_split(char const *s, char c);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strdup(const char *s);
@@ -58,6 +61,7 @@ size_t	ft_strlen(const char *s);
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 void	ft_striteri(char *s, void (*f)(unsigned int, char*));
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
+int	ft_inset(char c, char const *set);
 
 /*List functions*/
 
@@ -76,5 +80,12 @@ void	ft_lstdelone(t_list *lst, void (*del)(void *));
 void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+
+/* Printf function */
+
+int	ft_printf(const char *format, ...);
+char	*ft_dec_to_hex(unsigned int n, char *base);
+char	*ft_dec_to_xhex(unsigned long n, char *base);
+char	*ft_utoa(unsigned int n);
 
 #endif

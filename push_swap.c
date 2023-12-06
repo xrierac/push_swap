@@ -10,15 +10,21 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft/libft.h"
 
 int	main(int argc, char *argv[])
 {
-	int	a_stack[argc];
-	int	b_stack[argc];
 	int	i;
+	t_list	*head;
+	t_list	*node;
 
-	i = -1;
-	while (++i < (argc - 1))
-		a_stack[i] = argv[i + 1];
-
+	if (argc > 1)
+		head = ft_lstnew(ft_atoi(argv[1]));
+	i = 1;
+	while (++i < argc)
+	{
+		node = ft_lstnew(ft_atoi(argv[i]));
+		ft_lstadd_back(&head, node);
+	}
+	return (0);
 }

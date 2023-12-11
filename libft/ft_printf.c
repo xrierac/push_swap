@@ -6,12 +6,11 @@
 /*   By: xriera-c <xriera-c@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/27 13:18:59 by xriera-c          #+#    #+#             */
-/*   Updated: 2023/11/30 10:38:39 by xriera-c         ###   ########.fr       */
+/*   Updated: 2023/12/11 11:21:57 by xriera-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-#include "libft/libft.h"
+#include "libft.h"
 
 static int	ft_putchar(int c)
 {

@@ -6,17 +6,13 @@
 /*   By: xriera-c <xriera-c@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 14:18:39 by xriera-c          #+#    #+#             */
-/*   Updated: 2023/12/04 17:03:18 by xriera-c         ###   ########.fr       */
+/*   Updated: 2023/12/11 12:14:28 by xriera-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	top_swap(int arr[])
+void	top_swap(t_list *head. t_list *node)
 {
-	int	tmp;
 
-	tmp = arr[0];
-	arr[0] = arr[1];
-	arr[1] = tmp;
 }
 
 void	rotate(int arr[], int len)

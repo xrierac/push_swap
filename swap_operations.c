@@ -6,14 +6,9 @@
 /*   By: xriera-c <xriera-c@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 14:18:39 by xriera-c          #+#    #+#             */
-/*   Updated: 2023/12/11 12:14:28 by xriera-c         ###   ########.fr       */
+/*   Updated: 2024/01/02 16:47:27 by xriera-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-void	top_swap(t_list *head. t_list *node)
-{
-
-}
 
 void	rotate(int arr[], int len)
 {

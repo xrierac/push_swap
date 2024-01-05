@@ -6,48 +6,52 @@
 /*   By: xriera-c <xriera-c@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 14:18:39 by xriera-c          #+#    #+#             */
-/*   Updated: 2024/01/05 09:47:08 by xriera-c         ###   ########.fr       */
+/*   Updated: 2024/01/05 11:00:17 by xriera-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-/*
-void	rotate(int arr[], int len)
+
+void	swap(int arr[])
 {
 	int	tmp;
-	int	i;
 
-	i = 0;
-	tmp = arr[i];
-	while (i < len - 1)
-	{
-		arr[i] = arr[i + 1];
-		i++;
-	}
-	arr[i] = tmp;
+	tmp = arr[0];
+	arr[0] = arr[1];
+	arr[1] = tmp;
 }
 
-void	reverse_rotate(int arr[], int len)
+void	rotate(int arr[], int *len)
 {
 	int	tmp;
 
-	tmp = arr[len - 1];
-	while ( len > 1)
-	{
-		arr[len - 1] = arr[len - 2];
-		len--;
-	}
+	tmp = arr[0];
+	decrease(arr, *len);
+	*len = *len + 1;
+	arr[*len] = tmp;
+}
+
+void	reverse_rotate(int arr[], int *len)
+{
+	int	tmp;
+
+	tmp = arr[*len - 1];
+	increase(arr, *len);
+	*len = *len - 1;
 	arr[0] = tmp;
 }
-*/
+
 void	top_push(int taker[], int giver[], int *len_taker, int *len_giver)
 {
-	int	tmp;
+	if (*len_giver != 0)
+	{
+		int	tmp;
 
-	tmp = giver[0];
-	decrease(giver, len_giver);
-	increase(taker, len_taker);
-	taker[0] = tmp;
+		tmp = giver[0];
+		decrease(giver, len_giver);
+		increase(taker, len_taker);
+		taker[0] = tmp;
+	}
 }
 
 void	increase(int arr[], int *len)

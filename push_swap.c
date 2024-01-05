@@ -6,7 +6,7 @@
 /*   By: xriera-c <xriera-c@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 14:18:26 by xriera-c          #+#    #+#             */
-/*   Updated: 2024/01/05 09:54:59 by xriera-c         ###   ########.fr       */
+/*   Updated: 2024/01/05 11:00:15 by xriera-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	main(int argc, char *argv[])
 	a = sizeof(stack_a) / sizeof(stack_a[0]);
 	len_a = &a;
 	ft_printf("%d\n", *len_a);
-	top_push(stack_b, stack_a, len_b, len_a);
+	
 	//TESTING AREA
 	i = 0;
 	while (++i <= *len_a)

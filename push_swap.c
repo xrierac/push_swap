@@ -6,7 +6,7 @@
 /*   By: xriera-c <xriera-c@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 14:18:26 by xriera-c          #+#    #+#             */
-/*   Updated: 2024/01/05 11:00:15 by xriera-c         ###   ########.fr       */
+/*   Updated: 2024/01/08 11:31:40 by xriera-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,15 +30,15 @@ int	main(int argc, char *argv[])
 		stack_a[i - 1] = ft_atoi(argv[i]);
 	a = sizeof(stack_a) / sizeof(stack_a[0]);
 	len_a = &a;
-	ft_printf("%d\n", *len_a);
-	
+	insertion_sort(stack_a, stack_b, len_a, len_b);	
 	//TESTING AREA
-	i = 0;
+/*	i = 0;
 	while (++i <= *len_a)
 		ft_printf("%d\n", stack_a[i - 1]);
 	i = 0;
 	while (++i <= *len_b)
 		ft_printf("%d\n", stack_b[i - 1]);
+*/
 	//
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: xriera-c <xriera-c@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 14:18:39 by xriera-c          #+#    #+#             */
-/*   Updated: 2024/01/05 11:00:17 by xriera-c         ###   ########.fr       */
+/*   Updated: 2024/01/08 11:54:05 by xriera-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ void	rotate(int arr[], int *len)
 	int	tmp;
 
 	tmp = arr[0];
-	decrease(arr, *len);
+	decrease(arr, len);
 	*len = *len + 1;
-	arr[*len] = tmp;
+	arr[*len - 1] = tmp;
 }
 
 void	reverse_rotate(int arr[], int *len)
@@ -36,7 +36,7 @@ void	reverse_rotate(int arr[], int *len)
 	int	tmp;
 
 	tmp = arr[*len - 1];
-	increase(arr, *len);
+	increase(arr, len);
 	*len = *len - 1;
 	arr[0] = tmp;
 }

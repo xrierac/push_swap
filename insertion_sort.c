@@ -6,7 +6,7 @@
 /*   By: xriera-c <xriera-c@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 09:11:57 by xriera-c          #+#    #+#             */
-/*   Updated: 2024/01/08 17:36:52 by xriera-c         ###   ########.fr       */
+/*   Updated: 2024/01/09 16:12:34 by xriera-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,9 +59,7 @@ void	insertion_sort(int arra[], int arrb[], int *lena, int *lenb)
 {
 	int	min;
 	int	index;
-	int	size;
 
-	size = *lena;
 	while (*lena != 0)
 	{
 		index = find_min_index(arra, lena);

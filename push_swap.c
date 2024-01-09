@@ -6,7 +6,7 @@
 /*   By: xriera-c <xriera-c@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 14:18:26 by xriera-c          #+#    #+#             */
-/*   Updated: 2024/01/08 11:31:40 by xriera-c         ###   ########.fr       */
+/*   Updated: 2024/01/09 17:11:25 by xriera-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,28 +17,29 @@ int	main(int argc, char *argv[])
 {
 	int	stack_a[argc - 1];
 	int	stack_b[argc - 1];
+	int sorted[argc - 1];
 	int	i;
-	int	*len_a;
-	int	*len_b;
+	int	*lena;
+	int	*lenb;
 	int a;
 	int	b;
 
 	i = 0;
 	b = 0;
-	len_b = &b;
+	lenb = &b;
 	while (++i < argc)
 		stack_a[i - 1] = ft_atoi(argv[i]);
 	a = sizeof(stack_a) / sizeof(stack_a[0]);
-	len_a = &a;
-	insertion_sort(stack_a, stack_b, len_a, len_b);	
+	lena = &a;
+	create_rank(stack_a, sorted, lena);
+	insertion_sort(sorted, stack_b, lena, lenb);	
 	//TESTING AREA
-/*	i = 0;
-	while (++i <= *len_a)
-		ft_printf("%d\n", stack_a[i - 1]);
-	i = 0;
-	while (++i <= *len_b)
-		ft_printf("%d\n", stack_b[i - 1]);
-*/
-	//
+//	i = 0;
+//	while (++i <= *len_a)
+//		ft_printf("%d\n", stack_a[i - 1]);
+//	i = 0;
+//	while (++i <= *lena)
+//		ft_printf("%d\n", sorted[i - 1]);
+//
 	return (0);
 }

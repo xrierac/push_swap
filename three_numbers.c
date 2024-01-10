@@ -1,35 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   rotate.c                                           :+:      :+:    :+:   */
+/*   three_numbers.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xriera-c <xriera-c@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/08 10:33:35 by xriera-c          #+#    #+#             */
-/*   Updated: 2024/01/10 12:12:45 by xriera-c         ###   ########.fr       */
+/*   Created: 2024/01/10 11:32:10 by xriera-c          #+#    #+#             */
+/*   Updated: 2024/01/10 11:46:29 by xriera-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft/libft.h"
 #include "push_swap.h"
 
-void	ra(int arr[], int *len)
+void	three_numbers(int arra[], int *len)
 {
-	rotate(arr, len);
-	ft_printf("ra\n");
+	if (arra[0] > arra[1] && arra[0] < arra[2])
+		sa(arra);
+	else if (arra[0] > arra[1] && arra[1] > arra[2])
+	{
+		sa(arra);
+		rra(arra, len);
+	}
+	else if (arra[0] > arra[1] && arra[1] < arra[2])
+		ra(arra, len);
+	else if (arra[0] < arra[1] && arra[1] > arra[2])
+	{
+		sa(arra);
+		ra(arra, len);
+	}
+	else if (arra[0] < arra[1] && arra[1] > arra[2])
+		rra(arra, len);
 }
-
-void	rb(int arr[], int *len)
-{
-	rotate(arr, len);
-	ft_printf("rb\n");
-}
-
-void	rr(int arra[], int arrb[], int *lena, int *lenb)
-{
-	rotate(arra, lena);
-	rotate(arrb, lenb);
-	ft_printf("rr\n");
-}
-
-

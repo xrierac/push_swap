@@ -6,7 +6,7 @@
 /*   By: xriera-c <xriera-c@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 14:18:26 by xriera-c          #+#    #+#             */
-/*   Updated: 2024/01/09 17:11:25 by xriera-c         ###   ########.fr       */
+/*   Updated: 2024/01/10 12:12:43 by xriera-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 int	main(int argc, char *argv[])
 {
 	int	stack_a[argc - 1];
-	int	stack_b[argc - 1];
+//	int	stack_b[argc - 1];
 	int sorted[argc - 1];
 	int	i;
 	int	*lena;
@@ -32,7 +32,8 @@ int	main(int argc, char *argv[])
 	a = sizeof(stack_a) / sizeof(stack_a[0]);
 	lena = &a;
 	create_rank(stack_a, sorted, lena);
-	insertion_sort(sorted, stack_b, lena, lenb);	
+//	insertion_sort(sorted, stack_b, lena, lenb);	
+	three_numbers(sorted, lena);
 	//TESTING AREA
 //	i = 0;
 //	while (++i <= *len_a)

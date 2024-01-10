@@ -6,7 +6,7 @@
 /*   By: xriera-c <xriera-c@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 11:28:05 by xriera-c          #+#    #+#             */
-/*   Updated: 2024/01/09 17:11:23 by xriera-c         ###   ########.fr       */
+/*   Updated: 2024/01/10 11:44:18 by xriera-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ void	reverse_rotate(int arr[], int *len);
 void	swap(int arr[]);
 void	insertion_sort(int arra[], int arrb[], int *lena, int *lenb);
 void	create_rank(int stack[], int sorted[], int *len);
+void	three_numbers(int arra[], int *len);
 
 //Operations
 void	sa(int arr[]);

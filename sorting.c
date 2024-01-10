@@ -6,7 +6,7 @@
 /*   By: xriera-c <xriera-c@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 16:24:20 by xriera-c          #+#    #+#             */
-/*   Updated: 2024/01/09 17:11:28 by xriera-c         ###   ########.fr       */
+/*   Updated: 2024/01/10 12:12:48 by xriera-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,3 +39,16 @@ int	find_min(int arr[], int bot, int top, int *len)
 		return (index_bot);
 	return (index_top);
 }
+
+void	sorting(int arra[], int arrb[], int *lena, int *lenb)
+{
+	int	i;
+
+	i = -1;
+	if (*lena <=110)
+	{
+		while (++i < 3)
+		{
+
+
+

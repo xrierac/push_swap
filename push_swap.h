@@ -6,18 +6,12 @@
 /*   By: xriera-c <xriera-c@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 11:28:05 by xriera-c          #+#    #+#             */
-/*   Updated: 2024/01/10 13:49:19 by xriera-c         ###   ########.fr       */
+/*   Updated: 2024/01/17 10:02:26 by xriera-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
-
-typedef struct	s_value
-{
-	int	number;
-	int	index;
-}	t_value;
 
 void	increase(int arr[], int *len);
 void 	decrease(int arr[], int *len);
@@ -29,6 +23,7 @@ void	insertion_sort(int arra[], int arrb[], int *lena, int *lenb);
 void	create_rank(int stack[], int sorted[], int *len);
 void	three_numbers(int arr[], int *len);
 void	three_numbers_reverse(int arr[], int *len);
+int		parsing(int argc, char *argv[], int size);
 
 //Operations
 void	sa(int arr[]);

@@ -6,7 +6,7 @@
 /*   By: xriera-c <xriera-c@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 11:08:17 by xriera-c          #+#    #+#             */
-/*   Updated: 2024/01/17 09:59:11 by xriera-c         ###   ########.fr       */
+/*   Updated: 2024/01/17 11:25:11 by xriera-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,11 +45,13 @@ static int	populate_array(char **arr, int stack[], int reset)
 			}
 			free(check);
 		}
+		i++;
 	}
 	free_memory(arr);
+	return (i);
 }
 
-int	parsing(int argc, char *argv[], int size)
+int	*parsing(int argc, char *argv[], int size)
 {
 	int		stack[size];
     int 	i;
@@ -63,15 +65,9 @@ int	parsing(int argc, char *argv[], int size)
 		arr = ft_split(argv[i], ' ');
 		while (arr[++j] != '\0')
 			;
-		if (j > (sizeof(stack) / sizeof(stack[0])))
-		{
-			free_memory(arr);
-			parsing(argc, argv, size * 2);
-			return (0);
-		}
 		if (populate_array(arr, stack, i) == -1)
-			return (-1);
+			return (0);
 		free_memory(arr);
 	}
-	return (0);
+	return (stack);
 }

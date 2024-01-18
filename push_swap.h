@@ -6,7 +6,7 @@
 /*   By: xriera-c <xriera-c@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 11:28:05 by xriera-c          #+#    #+#             */
-/*   Updated: 2024/01/18 14:37:43 by xriera-c         ###   ########.fr       */
+/*   Updated: 2024/01/18 16:21:54 by xriera-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ void	three_numbers_reverse(int arr[], int *len);
 int		get_size(int argc, char *argv[]);
 int		parsing(int argc, char *argv[], int stack[]);
 int		check_error(t_stack stack);
+void	sorting(t_stack *sta, t_stack *stb);
 
 //Operations
 void	sa(int arr[]);

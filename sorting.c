@@ -6,49 +6,34 @@
 /*   By: xriera-c <xriera-c@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 16:24:20 by xriera-c          #+#    #+#             */
-/*   Updated: 2024/01/10 12:12:48 by xriera-c         ###   ########.fr       */
+/*   Updated: 2024/01/18 17:31:39 by xriera-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/libft.h"
 #include "push_swap.h"
 
-int	find_min(int arr[], int bot, int top, int *len)
+int	find_rank(t_stack *sta, t_stack *stb, int min, int max)
 {
 	int	i;
-	int	min;
-	int	index_top;
-	int	index_bot;
 
 	i = -1;
-	min = arr[0];
-	while (++i < *len)
+	while (i < max - min)
 	{
-		if (min > arr[i] && min >= bot && min <= top && i < *len / 2)
+		if (sta->stack[0] <= max && sta->stack[0] >= min)
 		{
-			min = arr[i];
-			index_top = i;
+			pb(sta->stack, stb->stack, &sta->len, &stb->len);
+			if (stb->stack[0] < max / 2 && stb->len > 1)
+				rb(stb->stack, &stb->len);
+			i++;
 		}
-		if (min > arr[i] && min >= bot && min <= top)
-		{
-			min = arr[i];
-			index_bot = i;
-		}
+		ra(sta->stack, &sta->len);
 	}
-	if (index_bot - *len < index_top)
-		return (index_bot);
-	return (index_top);
+	return (0);
 }
 
-void	sorting(int arra[], int arrb[], int *lena, int *lenb)
+void	sorting(t_stack *sta, t_stack *stb)
 {
-	int	i;
-
-	i = -1;
-	if (*lena <=110)
-	{
-		while (++i < 3)
-		{
-
-
-
+	find_rank(sta, stb, 0, 67);
+	insertion_sort(sta->stack, stb->stack, &sta->len, &stb->len);
+}

@@ -6,7 +6,7 @@
 /*   By: xriera-c <xriera-c@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 14:18:26 by xriera-c          #+#    #+#             */
-/*   Updated: 2024/01/18 14:52:42 by xriera-c         ###   ########.fr       */
+/*   Updated: 2024/01/18 16:42:25 by xriera-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,11 @@ int	main(int argc, char *argv[])
 	if (sta.len > ARRAY_SIZE)
 		return (print_error());
 	stb.len = 0;
+	rkd.len = sta.len;
 	if (parsing(argc, argv, sta.stack) == -1 || check_error(sta) == -1)
 		return (print_error());
 	create_rank(sta.stack, rkd.stack, &sta.len);
-	insertion_sort(rkd.stack, stb.stack, &sta.len, &stb.len);
+	sorting(&rkd, &stb);
 /*
 	i = 0;
 	a = sizeof(stack_a) / sizeof(stack_a[0]);

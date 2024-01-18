@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_duplicate.c                                  :+:      :+:    :+:   */
+/*   check_error.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: xriera-c <xriera-c@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 10:03:40 by xriera-c          #+#    #+#             */
-/*   Updated: 2024/01/17 10:32:30 by xriera-c         ###   ########.fr       */
+/*   Updated: 2024/01/18 15:05:39 by xriera-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	check_error(int stack[])
+#include "push_swap.h"
+
+int	check_error(t_stack stack)
 {
 	int	i;
 	int	j;
-	int	size;
 
 	i = 0;
-	size = sizeof(stack) / stack[0];
-	while (i < size)
+	while (i < stack.len)
 	{
 		j = 0;
-		while (j < size)
+		while (j < stack.len)
 		{
-			if (j != i && stack[i] == stack[j])
+			if (j != i && stack.stack[i] == stack.stack[j])
 				return (-1);
 			j++;
 		}
@@ -31,4 +31,3 @@ int	check_error(int stack[])
 	}
 	return (0);
 }
-

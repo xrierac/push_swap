@@ -6,7 +6,7 @@
 /*   By: xriera-c <xriera-c@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 10:27:55 by xriera-c          #+#    #+#             */
-/*   Updated: 2024/01/08 10:31:05 by xriera-c         ###   ########.fr       */
+/*   Updated: 2024/01/18 15:08:56 by xriera-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ void	pa(int arra[], int arrb[], int *lena, int *lenb)
 	top_push(arra, arrb, lena, lenb);
 	ft_printf("pa\n");
 }
-
 
 void	pb(int arra[], int arrb[], int *lena, int *lenb)
 {

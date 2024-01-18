@@ -6,17 +6,22 @@
 /*   By: xriera-c <xriera-c@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 11:28:05 by xriera-c          #+#    #+#             */
-/*   Updated: 2024/01/17 11:25:18 by xriera-c         ###   ########.fr       */
+/*   Updated: 2024/01/18 14:37:43 by xriera-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-
 # ifndef ARRAY_SIZE
-#  define ARRAY_SIZE 5000
+#  define ARRAY_SIZE 1000
 # endif
+
+typedef struct	s_stack
+{
+	int	len;
+	int	stack[ARRAY_SIZE];
+}	t_stack;
 
 void	increase(int arr[], int *len);
 void 	decrease(int arr[], int *len);
@@ -29,6 +34,8 @@ void	create_rank(int stack[], int sorted[], int *len);
 void	three_numbers(int arr[], int *len);
 void	three_numbers_reverse(int arr[], int *len);
 int		get_size(int argc, char *argv[]);
+int		parsing(int argc, char *argv[], int stack[]);
+int		check_error(t_stack stack);
 
 //Operations
 void	sa(int arr[]);

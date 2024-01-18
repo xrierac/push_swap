@@ -6,14 +6,14 @@
 /*   By: xriera-c <xriera-c@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 11:10:53 by xriera-c          #+#    #+#             */
-/*   Updated: 2024/01/09 14:49:17 by xriera-c         ###   ########.fr       */
+/*   Updated: 2024/01/18 15:06:15 by xriera-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	create_rank(int stack[], int sorted[], int *len)
 {
 	int	i;
-	int j;
+	int	j;
 	int	count;
 
 	i = -1;
@@ -24,7 +24,7 @@ void	create_rank(int stack[], int sorted[], int *len)
 		while (++j < *len)
 		{
 			if (stack[i] > stack[j])
-					count++;
+				count++;
 		}
 		sorted[i] = count;
 	}

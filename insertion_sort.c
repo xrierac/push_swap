@@ -6,7 +6,7 @@
 /*   By: xriera-c <xriera-c@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 09:11:57 by xriera-c          #+#    #+#             */
-/*   Updated: 2024/01/09 16:12:34 by xriera-c         ###   ########.fr       */
+/*   Updated: 2024/01/18 15:19:41 by xriera-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,12 +54,26 @@ int	find_max_index(int arr[], int *len)
 	}
 	return (index);
 }
+static void	presort(int arra[], int *lena)
+{
+	int	i;
+
+	i = 0;
+	while (i < *lena)
+	{
+		if (i % 2 == 0 && arra[0] > arra[1])
+			sa(arra);
+		ra(arra, lena);
+		i++;
+	}
+}
 
 void	insertion_sort(int arra[], int arrb[], int *lena, int *lenb)
 {
 	int	min;
 	int	index;
 
+	presort(arra, lena);
 	while (*lena != 0)
 	{
 		index = find_min_index(arra, lena);

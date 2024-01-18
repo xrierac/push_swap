@@ -6,7 +6,7 @@
 /*   By: xriera-c <xriera-c@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/17 11:20:43 by xriera-c          #+#    #+#             */
-/*   Updated: 2024/01/17 11:25:14 by xriera-c         ###   ########.fr       */
+/*   Updated: 2024/01/18 12:25:43 by xriera-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,7 @@ int	get_size(int argc, char *argv[])
 	int	i;
 
 	i = 0;
+	size = 0;
 	while (++i < argc)
 	{
 		size += get_number_params(argv[i], ' ');

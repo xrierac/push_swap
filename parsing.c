@@ -6,13 +6,14 @@
 /*   By: xriera-c <xriera-c@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 11:08:17 by xriera-c          #+#    #+#             */
-/*   Updated: 2024/01/17 11:25:11 by xriera-c         ###   ########.fr       */
+/*   Updated: 2024/01/18 15:08:37 by xriera-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/libft.h"
+#include "push_swap.h"
 
-static void	free_memory(char **arr)
+static int	free_memory(char **arr)
 {
 	int	i;
 
@@ -51,23 +52,19 @@ static int	populate_array(char **arr, int stack[], int reset)
 	return (i);
 }
 
-int	*parsing(int argc, char *argv[], int size)
+int	parsing(int argc, char *argv[], int stack[])
 {
-	int		stack[size];
-    int 	i;
+	int		i;
 	int		j;
 	char	**arr;
 
-    i = 0;
-    while (++i < argc)
+	i = 0;
+	while (++i < argc)
 	{
 		j = -1;
 		arr = ft_split(argv[i], ' ');
-		while (arr[++j] != '\0')
-			;
 		if (populate_array(arr, stack, i) == -1)
-			return (0);
-		free_memory(arr);
+			return (-1);
 	}
-	return (stack);
+	return (0);
 }

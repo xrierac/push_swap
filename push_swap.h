@@ -6,7 +6,7 @@
 /*   By: xriera-c <xriera-c@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 11:28:05 by xriera-c          #+#    #+#             */
-/*   Updated: 2024/01/18 16:21:54 by xriera-c         ###   ########.fr       */
+/*   Updated: 2024/02/21 14:58:23 by xriera-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,14 @@ typedef struct	s_stack
 	int	stack[ARRAY_SIZE];
 }	t_stack;
 
+typedef struct	s_cost
+{
+	int	value;
+	int	push_price;
+	int	target;
+	int	current_position;
+}	t_cost;
+
 void	increase(int arr[], int *len);
 void 	decrease(int arr[], int *len);
 void	top_push(int taker[], int giver[], int *len_taker, int *len_giver);
@@ -32,7 +40,6 @@ void	swap(int arr[]);
 void	insertion_sort(int arra[], int arrb[], int *lena, int *lenb);
 void	create_rank(int stack[], int sorted[], int *len);
 void	three_numbers(int arr[], int *len);
-void	three_numbers_reverse(int arr[], int *len);
 int		get_size(int argc, char *argv[]);
 int		parsing(int argc, char *argv[], int stack[]);
 int		check_error(t_stack stack);

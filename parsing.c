@@ -6,23 +6,12 @@
 /*   By: xriera-c <xriera-c@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 11:08:17 by xriera-c          #+#    #+#             */
-/*   Updated: 2024/01/18 15:08:37 by xriera-c         ###   ########.fr       */
+/*   Updated: 2024/02/21 13:20:23 by xriera-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/libft.h"
 #include "push_swap.h"
-
-static int	free_memory(char **arr)
-{
-	int	i;
-
-	i = 0;
-	while (arr[i])
-		free(arr[i++]);
-	free(arr);
-	return (0);
-}
 
 static int	populate_array(char **arr, int stack[], int reset)
 {
@@ -48,7 +37,7 @@ static int	populate_array(char **arr, int stack[], int reset)
 		}
 		i++;
 	}
-	free_memory(arr);
+	ft_free_array(arr);
 	return (i);
 }
 

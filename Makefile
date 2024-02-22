@@ -7,7 +7,10 @@ SRC_DIR = .
 OBJ_DIR = .
 LIBFT_DIR = libft/
 
-SRCS := pipex.c utils.c
+SRCS := push_swap.c check_error.c create_rank.c parsing.c \
+	get_size.c push.c reverse_rotate.c rotate.c sort.c swap.c \
+	utils.c three_numbers.c sort_utils.c
+
 LIBFT := $(LIBFT_DIR)/libft.a
 
 OBJS := $(SRCS:.c=.o)
@@ -21,7 +24,7 @@ $(LIBFT) :
 %.o:%.c
 	cc $(CFLAGS) -c $< -o $@ 
 
-all: $(NAME)	
+all: $(NAME) $(LIBFT)	
 
 clean:
 	make -C $(LIBFT_DIR) clean

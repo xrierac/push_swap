@@ -6,12 +6,11 @@
 /*   By: xriera-c <xriera-c@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 11:08:17 by xriera-c          #+#    #+#             */
-/*   Updated: 2024/02/21 13:20:23 by xriera-c         ###   ########.fr       */
+/*   Updated: 2024/02/22 16:13:20 by xriera-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/libft.h"
-#include "push_swap.h"
 
 static int	populate_array(char **arr, int stack[], int reset)
 {

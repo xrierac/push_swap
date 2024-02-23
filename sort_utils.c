@@ -6,26 +6,41 @@
 /*   By: xriera-c <xriera-c@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 09:11:57 by xriera-c          #+#    #+#             */
-/*   Updated: 2024/02/22 15:59:26 by xriera-c         ###   ########.fr       */
+/*   Updated: 2024/02/23 17:28:38 by xriera-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	find_min_index(int arr[], int *len)
+void	check_top(t_stack *sta)
+{
+	int	i;
+
+	i = 0;
+	while (sta->stack[i] != 0)
+		i++;
+	if (i >= sta->len / 2)
+		while (sta->stack[0] != 0)
+			rra(sta);
+	if (i < sta->len / 2)
+		while (sta->stack[0] != 0)
+			ra(sta);
+}
+
+int	find_min_index(t_stack *stack)
 {
 	int	i;
 	int	min;
 	int	index;
 
 	i = 0;
-	min = arr[0];
+	min = stack->stack[0];
 	index = 0;
-	while (i < *len)
+	while (i < stack->len)
 	{
-		if (min > arr[i])
+		if (min > stack->stack[i])
 		{
-			min = arr[i];
+			min = stack->stack[i];
 			index = i;
 		}
 		i++;
@@ -33,28 +48,27 @@ int	find_min_index(int arr[], int *len)
 	return (index);
 }
 
-void	insertion_sort(int arra[], int arrb[], int *lena, int *lenb)
+void	presort(t_stack *sta, t_stack *stb, int cluster)
 {
-	int	min;
-	int	index;
+	int		i;
+	t_cost	val;
 
-	while (*lena != 0)
+	val.push_price = ARRAY_SIZE;
+	i = -1;
+	while (++i < sta->len)
 	{
-		index = find_min_index(arra, lena);
-		min = arra[index];
-		if (index < (*lena / 2))
+		if (sta->stack[i] < cluster && find_price(i, sta) < val.push_price)
 		{
-			while (arra[0] != min)
-				ra(arra, lena);
-			pb(arra, arrb, lena, lenb);
-		}
-		else
-		{
-			while (arra[0] != min)
-				rra(arra, lena);
-			pb(arra, arrb, lena, lenb);
+			val.push_price = find_price(i, sta);
+			val.value = sta->stack[i];
+			val.position = i;
 		}
 	}
-	while (*lenb != 0)
-		pa(arra, arrb, lena, lenb);
+	if (val.position > (sta->len - 1) / 2)
+		while (sta->stack[0] != val.value)
+			rra(sta);
+	if (val.position < (sta->len - 1) / 2)
+		while (sta->stack[0] != val.value)
+			ra(sta);
+	pb(sta, stb);
 }

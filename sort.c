@@ -6,7 +6,7 @@
 /*   By: xriera-c <xriera-c@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 16:24:20 by xriera-c          #+#    #+#             */
-/*   Updated: 2024/02/22 16:57:10 by xriera-c         ###   ########.fr       */
+/*   Updated: 2024/02/23 17:26:07 by xriera-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,20 +22,20 @@ static int	find_target(t_stack *sta, int value)
 	min = ARRAY_SIZE;
 	while (++i < sta->len)
 	{
-		if (sta->stack[i] > value && (sta->stack[i] - value) < min)
+		if (sta->stack[i] > value && (sta->stack[i] - value) <= min)
 		{
 			min = sta->stack[i] - value;
 			target = i;
 		}
 	}
 	if (min == ARRAY_SIZE)
-		return (find_min_index(sta->stack, &sta->len));
+		target = find_min_index(sta);
 	return (target);
 }
 
-static int	find_price(int position, t_stack *stack)
+int	find_price(int position, t_stack *stack)
 {
-	if (position > ((stack->len - 1) / 2))
+	if (position > ((stack->len) / 2))
 		return (stack->len - position);
 	return (position);
 }
@@ -55,7 +55,7 @@ static t_cost	get_cost(t_stack *sta, t_stack *stb)
 		l.position = i;
 		l.value = stb->stack[i];
 		l.target_val = sta->stack[l.target];
-		if (l.push_price < m.push_price)
+		if (l.push_price <= m.push_price)
 			m = l;
 	}
 	return (m);
@@ -63,42 +63,46 @@ static t_cost	get_cost(t_stack *sta, t_stack *stb)
 
 static void	perform_sort(t_stack *sta, t_stack *stb, t_cost m)
 {
-	if (m.target > (sta->len - 1) / 2 && m.position > (stb->len - 1) / 2)
+	if (m.target >= (sta->len) / 2 && m.position >= (stb->len) / 2)
 		while (sta->stack[0] != m.target_val && stb->stack[0] != m.value)
-			rrr(sta->stack, stb->stack, &sta->len, &stb->len);
-	if (m.target < (sta->len - 1) / 2 && m.position < (stb->len - 1) / 2)
+			rrr(sta, stb);
+	if (m.target < (sta->len) / 2 && m.position < (stb->len) / 2)
 		while (sta->stack[0] != m.target_val && stb->stack[0] != m.value)
-			rr(sta->stack, stb->stack, &sta->len, &stb->len);
-	if (m.target > (sta->len - 1) / 2)
+			rr(sta, stb);
+	if (m.target >= (sta->len) / 2)
 		while (sta->stack[0] != m.target_val)
-			rra(sta->stack, &sta->len);
-	if (m.position > (stb->len - 1) / 2)
+			rra(sta);
+	if (m.position >= (stb->len) / 2)
 		while (stb->stack[0] != m.value)
-			rrb(stb->stack, &stb->len);
-	if (m.target < (sta->len - 1) / 2)
+			rrb(stb);
+	if (m.target < (sta->len) / 2)
 		while (sta->stack[0] != m.target_val)
-			ra(sta->stack, &sta->len);
-	if (m.position < (stb->len - 1) / 2)
+			ra(sta);
+	if (m.position < (stb->len) / 2)
 		while (stb->stack[0] != m.value)
-			rb(stb->stack, &stb->len);
-	pa(sta->stack, stb->stack, &sta->len, &stb->len);
+			rb(stb);
+	pa(sta, stb);
 }
 
 void	sort(t_stack *sta, t_stack *stb)
 {
+	int	og_len;
+
+	og_len = sta->len;
 	if (sta->len == 2)
 	{
-		if (sta->stack[0] < sta->stack[1])
-			sa(sta->stack);
+		if (sta->stack[0] > sta->stack[1])
+			sa(sta);
 	}
-	else if (sta->len == 3)
-		three_numbers(sta);
 	else
 	{
+		while (sta->len > (og_len / 2) + 1)
+			presort(sta, stb, (og_len / 2));
 		while (sta->len > 3)
-			pb(sta->stack, stb->stack, &sta->len, &stb->len);
-		three_numbers(sta);
+			presort(sta, stb, og_len);
+		three_numbers(sta->stack[0], sta->stack[1], sta->stack[2], sta);
 		while (stb->len > 0)
 			perform_sort(sta, stb, get_cost(sta, stb));
+		check_top(sta);
 	}
 }

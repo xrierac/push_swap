@@ -6,28 +6,30 @@
 /*   By: xriera-c <xriera-c@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/10 11:32:10 by xriera-c          #+#    #+#             */
-/*   Updated: 2024/02/22 17:07:51 by xriera-c         ###   ########.fr       */
+/*   Updated: 2024/02/23 14:43:46 by xriera-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	three_numbers(t_stack *s)
+void	three_numbers(int a, int b, int c, t_stack *s)
 {
-	if (s->stack[0] > s->stack[1] && s->stack[0] < s->stack[2])
-		sa(s->stack);
-	else if (s->stack[0] > s->stack[1] && s->stack[1] > s->stack[2])
+	if (a < b && b < c)
+		;
+	else if (a > b && b < c && a < c)
+		sa(s);
+	else if (a > b && b > c)
 	{
-		sa(s->stack);
-		rra(s->stack, &s->len);
+		sa(s);
+		rra(s);
 	}
-	else if (s->stack[0] > s->stack[1] && s->stack[1] < s->stack[2])
-		ra(s->stack, &s->len);
-	else if (s->stack[0] < s->stack[1] && s->stack[0] < s->stack[2])
+	else if (a > b && b < c && a > c)
+		ra(s);
+	else if (a < b && b > c && a < c)
 	{
-		sa(s->stack);
-		ra(s->stack, &s->len);
+		sa(s);
+		ra(s);
 	}
-	else if (s->stack[0] < s->stack[1] && s->stack[1] > s->stack[2])
-		rra(s->stack, &s->len);
+	else if (a < b && b > c && a > c)
+		rra(s);
 }

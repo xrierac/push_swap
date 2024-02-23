@@ -6,7 +6,7 @@
 /*   By: xriera-c <xriera-c@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/22 16:17:10 by xriera-c          #+#    #+#             */
-/*   Updated: 2024/02/23 11:51:41 by xriera-c         ###   ########.fr       */
+/*   Updated: 2024/02/23 15:00:01 by xriera-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,12 @@ void	increase(t_stack *stack)
 	i = 0;
 	while (i < stack->len)
 	{
-		stack->stack[stack->len - i - 1] = stack->stack[stack->len - i - 2];
+		stack->stack[stack->len - i] = stack->stack[stack->len - i - 1];
 		i++;
 	}
 	stack->len = stack->len + 1;
 }
+
 void	decrease(t_stack *stack)
 {
 	int	i;

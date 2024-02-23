@@ -6,7 +6,7 @@
 /*   By: xriera-c <xriera-c@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 11:28:05 by xriera-c          #+#    #+#             */
-/*   Updated: 2024/02/22 16:09:55 by xriera-c         ###   ########.fr       */
+/*   Updated: 2024/02/23 16:39:45 by xriera-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,29 +32,32 @@ typedef struct s_cost
 	int	position;
 }	t_cost;
 
-void	increase(int arr[], int *len);
-void	decrease(int arr[], int *len);
-void	rotate(int arr[], int *len);
-void	reverse_rotate(int arr[], int *len);
+void	increase(t_stack *stack);
+void	decrease(t_stack *stack);
+void	rotate(t_stack *stack);
+void	reverse_rotate(t_stack *stack);
 void	create_rank(int stack[], int sorted[], int *len);
-void	three_numbers(t_stack *stack);
+void	three_numbers(int a, int b, int c, t_stack *stack);
 int		get_size(int argc, char *argv[]);
 int		parsing(int argc, char *argv[], int stack[]);
 int		check_error(t_stack stack);
 void	sort(t_stack *sta, t_stack *stb);
-int		find_min_index(int arr[], int *len);
+int		find_min_index(t_stack *stack);
+int		find_price(int position, t_stack *stack);
+void	presort(t_stack *sta, t_stack *stb, int cluster);
+void	check_top(t_stack *sta);
 
 //Operations
-void	sa(int arr[]);
-void	sb(int arr[]);
-void	ss(int arra[], int arrb[]);
-void	pa(int arra[], int arrb[], int *lena, int *lenb);
-void	pb(int arra[], int arrb[], int *lena, int *lenb);
-void	ra(int arr[], int *len);
-void	rb(int arr[], int *len);
-void	rr(int arra[], int arrb[], int *lena, int *lenb);
-void	rra(int arr[], int *len);
-void	rrb(int arr[], int *len);
-void	rrr(int arra[], int arrb[], int *lena, int *lenb);
+void	sa(t_stack *stack);
+void	sb(t_stack *stack);
+void	ss(t_stack *sta, t_stack *stb);
+void	pa(t_stack *sta, t_stack *stb);
+void	pb(t_stack *sta, t_stack *stb);
+void	ra(t_stack *stack);
+void	rb(t_stack *stack);
+void	rr(t_stack *sta, t_stack *stb);
+void	rra(t_stack *stack);
+void	rrb(t_stack *stack);
+void	rrr(t_stack *sta, t_stack *stb);
 
 #endif

@@ -6,36 +6,37 @@
 /*   By: xriera-c <xriera-c@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/08 10:24:33 by xriera-c          #+#    #+#             */
-/*   Updated: 2024/02/22 16:09:03 by xriera-c         ###   ########.fr       */
+/*   Updated: 2024/02/23 14:43:22 by xriera-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft/libft.h"
+#include "push_swap.h"
 
-static void	swap(int arr[])
+static void	swap(t_stack *stack)
 {
 	int	tmp;
 
-	tmp = arr[0];
-	arr[0] = arr[1];
-	arr[1] = tmp;
+	tmp = stack->stack[0];
+	stack->stack[0] = stack->stack[1];
+	stack->stack[1] = tmp;
 }
 
-void	sa(int arr[])
+void	sa(t_stack *stack)
 {
-	swap(arr);
+	swap(stack);
 	ft_printf("sa\n");
 }
 
-void	sb(int arr[])
+void	sb(t_stack *stack)
 {
-	swap(arr);
+	swap(stack);
 	ft_printf("sb\n");
 }
 
-void	ss(int arra[], int arrb[])
+void	ss(t_stack *sta, t_stack *stb)
 {
-	swap(arra);
-	swap(arrb);
+	swap(sta);
+	swap(stb);
 	ft_printf("ss\n");
 }

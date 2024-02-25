@@ -6,7 +6,7 @@
 /*   By: xriera-c <xriera-c@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 16:24:20 by xriera-c          #+#    #+#             */
-/*   Updated: 2024/02/23 17:26:07 by xriera-c         ###   ########.fr       */
+/*   Updated: 2024/02/25 14:13:57 by xriera-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,7 +96,7 @@ void	sort(t_stack *sta, t_stack *stb)
 	}
 	else
 	{
-		while (sta->len > (og_len / 2) + 1)
+		while (sta->len > (og_len / 2) + 1 && sta->len > 3)
 			presort(sta, stb, (og_len / 2));
 		while (sta->len > 3)
 			presort(sta, stb, og_len);

@@ -11,14 +11,15 @@
 /* ************************************************************************** */
 
 #include "libft/libft.h"
+#include <limits.h>
 
-static int	check_limit(char *str)
+static int	check_maxmin(char *str)
 {
-	if (ft_strlen(str) > 9)
-	{
-		if (*str == '-' || *str == '+')
-			return (0);
-	}
+	unsigned long	l;
+
+	l = ft_atol(arr[j]);
+	if (l > (unsigned long)INT_MAX || l < (unsigned long)INT_MIN)
+		return (-1);
 	return (0);
 }
 
@@ -41,14 +42,16 @@ static int	check_isnumber(char *str)
 static int	populate_array(char **arr, int stack[])
 {
 	static int	i = 0;
-	int			j;
+	int		j;
 	char		*check;
 
 	j = -1;
-	while (arr[++j] != '\0')
+	while (arr[++j])
 	{
-		if (check_isnumber(arr[j]) == -1 || check_limit(arr[j]) == -1)
+		if (check_isnumber(arr[j]) == -1 || ft_strlen(arr[j]) > 11)
 			return (-1);
+		if (check_maxmin(arr[j] == -1))
+				return (-1);
 		stack[i] = ft_atoi(arr[j]);
 		if (stack[i] == -1 || stack[i] == 0)
 		{

@@ -6,7 +6,7 @@
 /*   By: xriera-c <xriera-c@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 11:08:17 by xriera-c          #+#    #+#             */
-/*   Updated: 2024/02/22 16:13:20 by xriera-c         ###   ########.fr       */
+/*   Updated: 2024/02/25 14:16:14 by xriera-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,13 +43,11 @@ static int	populate_array(char **arr, int stack[], int reset)
 int	parsing(int argc, char *argv[], int stack[])
 {
 	int		i;
-	int		j;
 	char	**arr;
 
 	i = 0;
 	while (++i < argc)
 	{
-		j = -1;
 		arr = ft_split(argv[i], ' ');
 		if (populate_array(arr, stack, i) == -1)
 			return (-1);

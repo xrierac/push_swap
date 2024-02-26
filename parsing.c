@@ -6,7 +6,7 @@
 /*   By: xriera-c <xriera-c@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 11:08:17 by xriera-c          #+#    #+#             */
-/*   Updated: 2024/02/25 15:20:06 by xriera-c         ###   ########.fr       */
+/*   Updated: 2024/02/26 09:25:04 by xriera-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 
 static int	check_maxmin(char *str)
 {
-	unsigned long	l;
+	 long	l;
 
-	l = ft_atol(arr[j]);
-	if (l > (unsigned long)INT_MAX || l < (unsigned long)INT_MIN)
+	l = ft_atol(str);
+	if (l > INT_MAX || l < INT_MIN)
 		return (-1);
 	return (0);
 }
@@ -43,26 +43,15 @@ static int	populate_array(char **arr, int stack[])
 {
 	static int	i = 0;
 	int		j;
-	char		*check;
 
 	j = -1;
 	while (arr[++j])
 	{
 		if (check_isnumber(arr[j]) == -1 || ft_strlen(arr[j]) > 11)
 			return (-1);
-		if (check_maxmin(arr[j] == -1))
-				return (-1);
+		if (check_maxmin(arr[j]) == -1)
+			return (-1);
 		stack[i] = ft_atoi(arr[j]);
-		if (stack[i] == -1 || stack[i] == 0)
-		{
-			check = ft_itoa(stack[i]);
-			if (ft_strncmp(arr[j], check, ft_strlen(arr[j])) != 0)
-			{
-				free(check);
-				return (-1);
-			}
-			free(check);
-		}
 		i++;
 	}
 	return (0);

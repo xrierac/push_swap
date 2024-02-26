@@ -6,7 +6,7 @@
 /*   By: xriera-c <xriera-c@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/25 17:07:16 by xriera-c          #+#    #+#             */
-/*   Updated: 2024/02/25 17:08:43 by xriera-c         ###   ########.fr       */
+/*   Updated: 2024/02/26 09:20:35 by xriera-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 unsigned long	ft_atol(const char *nptr)
 {
-	unsigned long	i;
-	int				sign;
+	long	i;
+	int		sign;
 
 	i = 0;
 	sign = 1;

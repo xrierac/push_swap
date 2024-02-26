@@ -6,14 +6,14 @@
 /*   By: xriera-c <xriera-c@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/25 17:07:16 by xriera-c          #+#    #+#             */
-/*   Updated: 2024/02/26 09:20:35 by xriera-c         ###   ########.fr       */
+/*   Updated: 2024/02/26 12:18:07 by xriera-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <limits.h>
 
-unsigned long	ft_atol(const char *nptr)
+long	ft_atol(const char *nptr)
 {
 	long	i;
 	int		sign;

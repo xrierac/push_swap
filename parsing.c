@@ -6,7 +6,7 @@
 /*   By: xriera-c <xriera-c@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 11:08:17 by xriera-c          #+#    #+#             */
-/*   Updated: 2024/02/26 09:25:04 by xriera-c         ###   ########.fr       */
+/*   Updated: 2024/02/26 12:21:54 by xriera-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 static int	check_maxmin(char *str)
 {
-	 long	l;
+	long	l;
 
 	l = ft_atol(str);
 	if (l > INT_MAX || l < INT_MIN)
@@ -42,7 +42,7 @@ static int	check_isnumber(char *str)
 static int	populate_array(char **arr, int stack[])
 {
 	static int	i = 0;
-	int		j;
+	int			j;
 
 	j = -1;
 	while (arr[++j])

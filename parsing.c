@@ -6,7 +6,7 @@
 /*   By: xriera-c <xriera-c@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 11:08:17 by xriera-c          #+#    #+#             */
-/*   Updated: 2024/02/27 12:07:10 by xriera-c         ###   ########.fr       */
+/*   Updated: 2024/02/28 15:35:20 by xriera-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,11 @@ static int	check_isnumber(char *str)
 
 	i = 0;
 	if (str[0] == '-' || str[0] == '+')
+	{
+		if (str[1] == '\0')
+			return (-1);
 		i++;
+	}
 	while (str[i])
 	{
 		if (ft_isdigit(str[i]) == 0)

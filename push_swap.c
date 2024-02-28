@@ -6,7 +6,7 @@
 /*   By: xriera-c <xriera-c@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/04 14:18:26 by xriera-c          #+#    #+#             */
-/*   Updated: 2024/02/25 14:07:50 by xriera-c         ###   ########.fr       */
+/*   Updated: 2024/02/28 15:19:51 by xriera-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int	main(int argc, char *argv[])
 	t_stack	stb;
 	t_stack	rkd;	
 
-	if (argc == 1)
+	if (argc < 2)
 		return (0);
 	sta.len = get_size(argc, argv);
 	if (sta.len > ARRAY_SIZE || sta.len <= 0)

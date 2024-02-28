@@ -6,7 +6,7 @@
 /*   By: xriera-c <xriera-c@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 11:28:05 by xriera-c          #+#    #+#             */
-/*   Updated: 2024/02/23 16:39:45 by xriera-c         ###   ########.fr       */
+/*   Updated: 2024/02/28 15:02:40 by xriera-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define PUSH_SWAP_H
 
 # ifndef ARRAY_SIZE
-#  define ARRAY_SIZE 1000
+#  define ARRAY_SIZE 5000
 # endif
 
 typedef struct s_stack

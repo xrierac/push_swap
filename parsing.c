@@ -6,7 +6,7 @@
 /*   By: xriera-c <xriera-c@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/09 11:08:17 by xriera-c          #+#    #+#             */
-/*   Updated: 2024/02/28 15:35:20 by xriera-c         ###   ########.fr       */
+/*   Updated: 2024/02/29 12:05:38 by xriera-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,8 @@ int	parsing(int argc, char *argv[], int stack[])
 	i = 0;
 	while (++i < argc)
 	{
+		if (ft_strncmp(argv[i], "", 1) == 0)
+			return (-1);
 		arr = ft_split(argv[i], ' ');
 		if (arr == NULL)
 			return (-1);

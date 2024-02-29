@@ -6,7 +6,7 @@
 /*   By: xriera-c <xriera-c@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/29 09:45:36 by xriera-c          #+#    #+#             */
-/*   Updated: 2024/02/29 11:21:19 by xriera-c         ###   ########.fr       */
+/*   Updated: 2024/02/29 12:29:29 by xriera-c         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ static int	check_order(t_stack *sta)
 	int	prev;
 
 	i = -1;
-	prev = -1;
+	prev = -2147483648;
 	while (++i < sta->len)
 	{
-		if (sta->stack[i] > prev)
+		if (sta->stack[i] >= prev)
 			prev = sta->stack[i];
 		else
 			return (1);

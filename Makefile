@@ -22,7 +22,7 @@ LIBFT := $(LIBFT_DIR)/libft.a
 OBJS := $(SRCS:.c=.o)
 BONUS_OBJS := $(BONUS_SRCS:.c=.o)
 
-$(NAME) : $(OBJS)
+$(NAME) : $(LIBFT) $(OBJS)
 	$(CC) $(OBJS) -Llibft -lft -o $(NAME)
 
 $(BONUS) : $(LIBFT) $(BONUS_OBJS)
@@ -39,7 +39,7 @@ all: $(LIBFT) $(NAME)
 clean:
 	make -C $(LIBFT_DIR) clean
 	rm -f $(OBJS)
-	rm -f $(BONUS_DIR)/$(BONUS_OBJS)
+	rm -f $(BONUS_OBJS)
 
 fclean: clean 
 	rm -f $(LIBFT)
